@@ -8,20 +8,22 @@ struct Student{
 	int number;
 };
 
-int main() {
-	struct Student students[3];
-	int i=0;
-	for(i = 0; i < 3;i++) {
-		cout<<"Write student's data";
-	  cin >> students[i].name >>students[i].surname >> students[i].number;
+void show(struct Student s) {
+	cout<<s.name<<s.surname<<s.number;
+}
 
-		
-	}
-	for(i = 0; i < 3;i++) {
+struct Student getData() {
+	struct Student st;
+	cin>>st.name>>st.surname>>st.number;
 	
-	cout << students[i].name << "," << students[i].surname << "," << students[i].number;
+	return st;
+}
 
-	}
+
+int main() {
+	struct Student student=getData();
+	show(student);
+	
 	
 	return 0;
 }
