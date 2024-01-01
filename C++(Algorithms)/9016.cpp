@@ -1,38 +1,41 @@
-#include <iostream>
+#include<iostream>
 
 using namespace std;
 
-int binary_search(int, int[], int, int);
-int main()
-{
-    int size, numofsearched, searched,count=0;
-    cin >> size;
-    cin >> numofsearched;
-    int arr[size];
-    
-    
-    for (int i = 0; i < size; i++)
-    {
-        cin >> arr[i];
-    }
-    
-    for (int i = 0; i < numofsearched; i++)
-    {
-        cin >> searched;
-        if(binary_search(searched, arr, 0, size - 1) == arr[i])
-            count++;
-            cout<<count;
-    }  
-}
-
-int binary_search(int searched, int arr[], int left, int right)
-{
-    while (left <= right)
-    {
-        int mid = left + (right - left) / 2;
-        if (arr[mid] == searched) return mid;
-        else if (arr[mid] > searched) right = mid - 1;
-        else left = mid + 1;
+int binarySearch(int searched, int arr[], int begin, int end) {
+    while (end >= begin) {
+        int middle = begin + (end - begin) / 2;  
+        if (arr[middle] == searched)
+            return 1;
+        if (arr[middle] > searched)
+            end = middle - 1;  
+        if (arr[middle] < searched)
+            begin = middle + 1;  
     }
     return -1;
 }
+
+int main() {
+    int n, q, searched;
+    cin >> n >> q;
+    int arr[n];
+
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    for (int j = 0; j < q; j++) {
+        cin >> searched;
+        
+        binarySearch(searched,arr,0,n-1);
+        
+        int count=0;
+        for(int k=0;k<n;k++) {
+        	if(arr[k]==searched) count++;
+		}
+		cout<<count<<endl;
+    }
+
+    return 0;
+}
+
