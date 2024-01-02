@@ -5,7 +5,7 @@ using namespace std;
 int binarySearch(int searched, int arr[], int begin, int end) {
     while (end >= begin) {
         int middle = begin + (end - begin) / 2;  
-        if (arr[middle] == searched)
+        if (arr[middle] == searched)z   
             return 1;
         if (arr[middle] > searched)
             end = middle - 1;  
