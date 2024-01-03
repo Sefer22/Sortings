@@ -10,7 +10,7 @@ bool oneOdd(int n) {
 		if(endNumber%2==1) {
 			return true;
 		}else {
-			oneOdd(n/10);
+			return oneOdd(n/10);
 		}
 	}
 	

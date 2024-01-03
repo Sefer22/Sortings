@@ -3,7 +3,7 @@
 using namespace std;
 
 bool sadeEded(int n,int i=2) {
-	if(n<=1 || i<n&& n%i==0) {
+	if(n<=1 || (i<n&& n%i==0)) {
 		return false;
 	}else if(i<n){ 
 		return sadeEded(n,i+1);
