@@ -11,10 +11,10 @@ int main()  {
 	
 	for(int i=0;i<N;i++) {
 		for(int j=0;j<M;j++) {
-			cin>>matrix[i][j];
+			cin>>matrix[i][j]
 		}
 	}
-	cout<<M<<" "<<N<<endl;
+	cout<<M<<" "<<N;
 	for(int j=0;j<M;j++) {
 		for(int i=N-1;i>=0;i--){
 			cout<<matrix[i][j]<<" ";
