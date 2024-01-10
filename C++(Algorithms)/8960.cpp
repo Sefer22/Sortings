@@ -4,26 +4,32 @@
 using namespace std;
 
 int main() {
-	int n;
+	int n,sum=0;
 	cin>>n;
+	vector<int> A(n);
 	
-	vector<int> A(n); 
 	for(int i=0;i<n;i++) {
 		cin>>A[i];
 	}
+	int max=A[0];
+	int min=A[0];
 	
-	int max=A[n-1],maxindex=n-1;;
-	for(int i=n-2; i >= 0;i--) {
+	
+	for(int i=0;i<n;i++) {
 		if(A[i] > max) {
 			max=A[i];
-			maxindex=i;
+		}
+		if(A[i] < min) {
+			min=A[i];
 		}
 	}
-	
-	swap(A[maxindex],A[n-1]);
 	for(int i=0;i<n;i++) {
-		cout<<A[i]<<" ";
+		if(A[i] != min && A[i] !=max) {
+			sum +=A[i];
+		}
 	}
+	cout<<sum<<endl;
+	
 	
 	return 0;
 }

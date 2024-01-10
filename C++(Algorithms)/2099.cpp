@@ -2,40 +2,45 @@
 
 using namespace std;
 
-int main()  {
-	int n,k=0;
+int main() {
+	int n;
 	cin>>n;
-	int A[n];
-	
+	int a[n];
 	for(int i=0;i<n;i++) {
-		cin>>A[i];
+		cin>>a[i];
 	}
 	int m;
 	cin>>m;
-    int B[m];
-		
+	int b[m];
 	for(int j=0;j<m;j++) {
-		cin>>B[j];
+		cin>>b[j];
 	}
-	
-	for(int i=0;i<n;i++) {
-		for(int j=0;j<m;j++) {
-			if(A[n] != B[m]) {
-				k++;
-				
+	int i,j;
+	int differentCount=0;
+	for(i=0;i<n;i++) {
+		bool found=false;
+		for(j=0;j<m;j++) {
+			if(a[i]==b[j]) {
+			found=true;
+			break;
 			}
-		}
 	}
-	cout<<k<<endl;
-	
-		for(int i=0;i<n;i++) {
-		for(int j=0;j<m;j++) {
-			if(A[n] != B[m]) {
-                cout<<A[i];
-				
+	if(!found) {
+		differentCount++;
+	}
+}
+		cout<<differentCount<<endl;
+		for(i=0;i<n;i++) {
+		bool found=false;
+		for(j=0;j<m;j++) {
+			if(a[i]==b[j]) {
+			found=true;
+			break;
 			}
-		}
 	}
-	
+	if(!found) {
+		cout<<a[i]<<" ";
+	}
+}
 	return 0;
 }
