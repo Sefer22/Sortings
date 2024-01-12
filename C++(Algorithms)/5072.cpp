@@ -10,18 +10,19 @@ int main() {
 	vector<vector<int> > til(n,vector<int>(n,0));
 	
 	for(int i=0;i<n;i++) {
-		for(int j=0;j<n;j++) {
+		for(int j=0;j<n;j++){
 			cin>>til[i][j];
 		}
-	}	
-	
-	int tilCount=0;
+	}
+	int count=0;
 	for(int i=0;i<n;i++) {
 		for(int j=0;j<n;j++) {
-		tilCount+=til[i][j];
+		count += til[i][j];	
 		}
 	}
-	cout<<tilCount<<endl;
+	
+	cout<<count<<endl;
+	
 	
 	return 0;
 }

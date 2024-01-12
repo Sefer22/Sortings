@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int main()  {
+int main() {
 	int n;
 	cin>>n;
 	
@@ -14,16 +14,16 @@ int main()  {
 			cin>>cities[i][j];
 		}
 	}
-	int roadCount=0;
+	int count=0;
 	for(int i=0;i<n;i++) {
 		for(int j=i+1;j<n;j++) {
-			if(cities[i][j] == 1 && cities[j][i]==1) {
-				roadCount++;
+			if(cities[i][j]==1 && cities[j][i]==1) {
+				count++;
 			}
-		} 
+		}
 	}
 	
-	cout<<roadCount<<endl;
+	cout<<count<<endl;
 	
 	return 0;
 }
